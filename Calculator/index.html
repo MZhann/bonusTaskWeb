@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="calcblock">
+            <div class="calculator">
+                <div id="numbers" class="answer">
+                    <div id = "firstNum" class="firstNum"></div>
+                    <div id = "operationType" class="operationType"></div>
+                    <div id = "secondNum" class="secondNum"></div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div>
+                    <button  class="upperSigns" onclick = "deleteAll()">AC</button>
+                    <button  class="upperSigns">+/-</button>
+                    <button  class="upperSigns">%</button>
+                    <button  value="/" class="orange" onclick="giveSign(this.value)">/</button>
+                </div>
+                <div>
+                    <button  value="7" class="black" onclick="giveValue(this.value)">7</button>
+                    <button  value="8" class="black" onclick="giveValue(this.value)">8</button>
+                    <button  value="9" class="black" onclick="giveValue(this.value)">9</button>
+                    <button  value="*" class="orange"   onclick="giveSign(this.value)">*</button>
+                </div>
+                <div>
+                    <button  value="4" class="black" onclick="giveValue(this.value)">4</button>
+                    <button  value="5" class="black" onclick="giveValue(this.value)">5</button>
+                    <button  value="6" class="black" onclick="giveValue(this.value)">6</button>
+                    <button  value="-" class="orange"   onclick="giveSign(this.value)">-</button>
+                </div>
+                <div>
+                    <button  value="1" class="black" onclick="giveValue(this.value)">1</button>
+                    <button  value="2" class="black" onclick="giveValue(this.value)">2</button>
+                    <button  value="3" class="black" onclick="giveValue(this.value)">3</button>
+                    <button  value="+" class="orange"   onclick="giveSign(this.value)">+</button>
+                </div>
+                <div>
+                    <button  value="0" class="buttonLongDarkGray" onclick="giveValue(this.value)">0</button>
+                   
+                    <button  class="black">,</button>
+                    <button  class="orange" onclick="solve()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var firstNum ="";
+        var secondNum ="";
+        var operationType ="";
+        var result;
+
+        function deleteAll(){
+            firstNum = "";
+            secondNum = "";
+            operationType = "";
+            document.getElementById("firstNum").innerHTML = "";
+            document.getElementById("secondNum").innerHTML = "";
+            document.getElementById("operationType").innerHTML = "";
+            console.log(firstNum + secondNum + operationType);
+        }
+
+        function solve() {
+            
+            switch (operationType) {
+                case '+': result = Number(firstNum) + Number(secondNum); break;
+                case '-': result = Number(firstNum) - Number(secondNum); break;
+                case '*': result = Number(firstNum) * Number(secondNum); break;
+                case '/': result = Number(firstNum) / Number(secondNum); break;
+            }
+
+            document.getElementById("firstNum").innerHTML = result;
+            document.getElementById("secondNum").innerHTML = "";
+            firstNum = result;
+            secondNum = "";
+            operationType = "";
+            document.getElementById("operationType").innerHTML = "";
+        }
+
+
+        function giveValue(value){
+            console.log(value);
+            if(firstNum == "" && operationType == ""){
+                firstNum = firstNum + "" + value;
+                document.getElementById("firstNum").innerHTML = value;
+            }
+            else if(firstNum != "" && operationType == ""){
+                firstNum = firstNum + "" + value;
+                document.getElementById("firstNum").innerHTML = firstNum;
+            }
+            else if(firstNum != "" && operationType != ""){
+                secondNum = secondNum + "" + value;
+                document.getElementById("secondNum").innerHTML = secondNum;
+            }
+        }
+
+        function giveSign(value){
+            console.log(value);
+            if(operationType == "" || sing != ""){
+                operationType = value;
+                document.getElementById("operationType").innerHTML = operationType;
+            }
+        }
+
+
+        
+
+
+        
+
+
+    </script>
+</body>
+</html>
