@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LAB6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="block">
+        <img src="cart-removebg-preview.png" class="cart" width="40">
+        <img src="close-removebg-preview.png" class="close" width="40">
+        <img src="bmw.png" class="car" width="400">
+        <h3 class="model">BMW</h3>
+        <div class="about">
+            
+            <h3 class="price">35500 $</h3>
+            <div class="phoneNumber">+7(707) 606 50 50</div>
+        </div>
+    </div>
+    <div class="block">
+        <img src="cart-removebg-preview.png" class="cart" width="40">
+        <img src="close-removebg-preview.png" class="close" width="40">
+        <img src="audi.png" class="car" width="400">        
+        <h3 class="model">Audi</h3>
+        <div class="about">
+            <h3 class="price">28500 $</h3>
+            <div class="phoneNumber">+7(777) 666 55 44</div>
+        </div>
+    </div>
+    <div class="block">
+        <img src="cart-removebg-preview.png" class="cart" width="40">
+        <img src="close-removebg-preview.png" class="close" width="40">
+        <img src="chervrolet.png" class="car" width="400">        
+        <h3 class="model">Chevrolet</h3>
+        <div class="about">
+            <h3 class="price">50500 $</h3>
+            <div class="phoneNumber">+7(777) 999 88 22</div>
+        </div>
+    </div>
+<script>
+    $(document).ready (function (){
+        $(document).on( 'click', '.close', function (){
+            $(this).parents(".block").hide(); 
+        });
+
+        $(document).on( 'click', '.cart', function (){ 
+            $(this).attr('src', 'dollar.png');  //осы жерде attr методы аркылы 
+        });
+    });
+</script>
+</body>
+</html>

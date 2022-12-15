@@ -1,0 +1,51 @@
+body {
+    font-family: fantasy, sans-serif;
+    letter-spacing: 1px;
+    padding: 61px;
+    display: flex;
+    background-color: #7895b8;
+}
+
+
+.model{
+    margin-bottom: 5px;
+}
+
+.block {
+    border: 5px solid white;
+    margin: 15px;
+    width: 400px;
+    height: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #64e79a;
+    padding: 11px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 15) 0px 5px 10px;
+}
+
+
+.phoneNumber{
+    font-size: 18px;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart {
+    position: absolute;
+    right: 52px;  
+}
+
+.close {
+    position: absolute;
+    right: 10px;  
+}
+
+.price {
+    margin: 0;
+}
